@@ -127,7 +127,7 @@ def render_mushra(testid, df):
     )
 
 
-def render_boxplot(testid, df):
+""" def render_boxplot(testid, df):
     fig = Figure(facecolor=(0, 0, 0, 0))
     ax = fig.add_subplot(111)
 
@@ -164,4 +164,45 @@ def render_boxplot(testid, df):
     uri = 'data:image/png;base64,' + quote(
         base64.b64encode(png_output.getbuffer())
     )
+    return uri """
+
+# chat gpt fixed this, i cannot attest for the correctness of this code
+def render_boxplot(testid, df):
+    fig = Figure(facecolor=(0, 0, 0, 0))
+    ax = fig.add_subplot(111)
+
+    sns.set_style("whitegrid")
+    sns.set_style("darkgrid", {
+        'axes.facecolor': (1, 1, 1, 0),
+        'figure.facecolor': (1, 1, 1, 0),
+        'axes.edgecolor': '.8',
+        'grid.color': '.8',
+        'ytick.minor.size': 0,
+        'ytick.color': '0',
+    })
+
+    sns.boxplot(
+        x=df[('responses_stimulus')],
+        y=df[('responses_score')],
+        ax=ax,
+    )
+
+    ax.get_yaxis().set_minor_locator(mpl.ticker.AutoMinorLocator())
+    ax.grid(which='minor', color='0.8', linewidth=0.5)
+    ax.set_ylim([0, 101])
+
+    sns.despine(left=True, ax=ax, trim=False)
+
+    canvas = FigureCanvas(fig)
+
+    png_output = BytesIO()
+    canvas.print_png(png_output)
+
+    png_output.seek(0)  # rewind the data
+
+    uri = 'data:image/png;base64,' + quote(
+        base64.b64encode(png_output.getbuffer())
+    )
     return uri
+
+
