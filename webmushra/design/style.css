@@ -1,0 +1,168 @@
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.ui-slider-track.ui-state-disabled {  
+  opacity: 1.0;
+  filter: brightness(1.05) contrast(0.8);  
+}
+
+.noUi-connect {
+  background-color: #ED8C01; /* NOTE Background-color between handles alabs-orange */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background-color: #F5F5F5;
+  color: #333;
+} 
+
+body.ui-mobile-viewport, div.ui-mobile-viewport {
+  overflow-x: scroll;
+}
+
+.ui-mobile .ui-page-active {
+  overflow-x: visible;
+}
+
+#container {  
+  position: relative; 
+  margin: 0 auto; 
+  padding: 0 7%;
+}
+
+.header {
+  position: relative;
+  border: 1px solid #333;
+  background: linear-gradient(145deg, #111, #333);
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-shadow: 0 -1px 1px black;
+  padding: 1em 0;
+  text-align: center;
+}
+
+.default_padding {
+  border-collapse: separate;
+  border-spacing: 1.5em 0.5em;
+}
+
+#mushra_items, #tableBS1116 {
+  border-spacing: 0.5em;
+  position: relative;
+}
+
+td.logo {
+  padding: 0 0.5em;
+}
+
+img.logo {
+  height: 3em;
+}
+
+table.logo {
+  margin-top: 1em;
+}
+
+.center {
+  margin: 0 auto;
+}
+
+td.stopButton {
+  width: 10%;
+  vertical-align: bottom;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+#sliderLim {
+  width: 5%;
+}
+
+#waveTable {
+  width: 100%;
+}
+
+#conditionNameScale, #BS1116conditionNameScale {
+  width: 14em;
+}
+
+#buttonStop, .audioControlElement {
+  width: 6em !important;
+  margin: 0 auto;
+}
+
+#mainUp {
+  width: 100%;
+}
+
+.ui-tolito-progressbar-outer-a {
+  background: #fff;
+  border: 1px solid #000;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #111;
+}
+
+.ui-tolito-progressbar-active-b {
+  background: #FFb500;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 1px #333;
+}
+
+#page_progressbar {
+  width: 30em;
+  height: 1em;
+  margin: 0.5em auto;
+}
+
+.fileplayer_progressbar {
+  width: 10em;
+  height: 1.5em;
+}
+
+#slider {
+  z-index: 10;
+  cursor: auto;
+}
+
+#buttonReference {
+  margin-left: -0.4em !important;
+  margin: 0 auto;
+}
+
+.limits {
+  width: 4em !important;
+  text-align: center !important;
+}
+
+#div_lower_limit, #div_upper_limit {
+  margin: 0 1.5em -12px;
+}
+
+#main {
+  cursor: auto;
+}
+
+#tdPlayButton, #tdStopButton {
+  text-align: left;
+}
+
+.noUi-handle {
+  cursor: auto;
+}
+
+li, .left {
+  text-align: left;
+  width: 50%;
+  margin-left: 25%;
+}

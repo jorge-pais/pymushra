@@ -1,0 +1,117 @@
+testname: DyNaVoiceR II - Perceptual Testing
+testId: dynavoicerII_testing
+bufferSize: 2048
+stopOnErrors: true
+showButtonPreviousPage: true
+remoteService: service/write.php
+
+pages:
+    - type: consent
+      id: consent_page
+      name: Consent
+      mustConsent: true
+      content: <p>Welcome to Dysphonic to Natural Voice Reconstruction II testing environment!</p> This test is designed to evaluate the quality of whispered-to-normal speech conversion technologies. You'll hear a series of speech samples and be asked to rate their quality. It is advised to perform these tests in a <b>quiet place</b>, using either good quality <b>headphones</b> or <b>earphones</b>.<p>You are participating in a listening test. For this, we want to store the answers you give to the following questions.<br>Do you give consent for this?</p>
+    - type: mushra
+      id: SPF05_aviao
+      name: Test 1/5 - SPF05 - A
+      content: <p>Please rate the quality of the speech samples you are about to hear.</p> Take into account the global quality of each sample in terms of <b>intelligibility</b>, <b>naturalness</b>, and <b>overall audio quality</b>.
+      showWaveform: false
+      enableLooping: false
+      reference: AUDIO_RESULTS/processed/SPF05_AviaoVocal.wav
+      randomize: true
+      createAnchor70: false
+      createAnchor35: false
+      stimuli:
+        whispered: AUDIO_RESULTS/processed/SPF05_AviaoWhisperd.wav
+        frameFilt: AUDIO_RESULTS/unsegmented/SPF05_Aviao_1_frameFiltering.wav
+        pulseFilt: AUDIO_RESULTS/unsegmented/SPF05_Aviao_2_pulseFiltering.wav
+        segmented: AUDIO_RESULTS/segmented/SPF05_Aviao_3_segmentedF0.wav
+
+    - type: mushra
+      id: SPF12_tiago
+      name: Test 2/5 - SPF12 - B
+      content: <p>Please rate the quality of the speech samples you are about to hear.</p> Take into account the global quality of each sample in terms of <b>intelligibility</b>, <b>naturalness</b>, and <b>overall audio quality</b>.
+      showWaveform: false
+      enableLooping: false
+      reference: AUDIO_RESULTS/processed/SPF12_TiagoVocal.wav
+      randomize: true
+      createAnchor70: false
+      createAnchor35: false
+      stimuli:
+        whispered: AUDIO_RESULTS/processed/SPF12_TiagoWhisperd.wav
+        frameFilt: AUDIO_RESULTS/unsegmented/SPF12_Tiago_1_frameFiltering.wav
+        pulseFilt: AUDIO_RESULTS/unsegmented/SPF12_Tiago_2_pulseFiltering.wav
+        segmented: AUDIO_RESULTS/segmented/SPF12_Tiago_3_segmentedF0.wav
+
+    - type: mushra
+      id: SPM14_tiago
+      name: Test 3/5 - SPM14 - B
+      content: <p>Please rate the quality of the speech samples you are about to hear.</p> Take into account the global quality of each sample in terms of <b>intelligibility</b>, <b>naturalness</b>, and <b>overall audio quality</b>.
+      showWaveform: false
+      enableLooping: false
+      reference: AUDIO_RESULTS/processed/SPM14_TiagoVocal.wav
+      randomize: true
+      createAnchor70: false
+      createAnchor35: false
+      stimuli:
+        whispered: AUDIO_RESULTS/processed/SPM14_TiagoWhisperd.wav
+        frameFilt: AUDIO_RESULTS/unsegmented/SPM14_Tiago_1_frameFiltering.wav
+        pulseFilt: AUDIO_RESULTS/unsegmented/SPM14_Tiago_2_pulseFiltering.wav
+        segmented: AUDIO_RESULTS/segmented/SPM14_Tiago_3_segmentedF0.wav
+    
+    - type: mushra
+      id: SPM18_aviao
+      name: Test 4/5 - SPM18 - A
+      content: <p>Please rate the quality of the speech samples you are about to hear.</p> Take into account the global quality of each sample in terms of <b>intelligibility</b>, <b>naturalness</b>, and <b>overall audio quality</b>.
+      showWaveform: false
+      enableLooping: false
+      reference: AUDIO_RESULTS/processed/SPM18_AviaoVocal.wav
+      randomize: true
+      createAnchor70: false
+      createAnchor35: false
+      stimuli:
+        whispered: AUDIO_RESULTS/processed/SPM18_AviaoWhisperd.wav
+        frameFilt: AUDIO_RESULTS/unsegmented/SPM18_Aviao_1_frameFiltering.wav
+        pulseFilt: AUDIO_RESULTS/unsegmented/SPM18_Aviao_2_pulseFiltering.wav
+        segmented: AUDIO_RESULTS/segmented/SPM18_Aviao_3_segmentedF0.wav
+
+    - type: mushra
+      id: vowels
+      name: Test 5/5 - Vowels
+      content: <p>Please rate the quality of the speech samples you are about to hear.</p> Take into account the global quality of each sample in terms of <b>intelligibility</b>, <b>naturalness</b>, and <b>overall audio quality</b>.
+      showWaveform: false
+      enableLooping: false
+      reference: AUDIO_RESULTS/vowel/source.wav
+      randomize: true
+      createAnchor70: false
+      createAnchor35: false
+      stimuli:
+        constant: AUDIO_RESULTS/vowel/constant.wav
+        f0contour: AUDIO_RESULTS/vowel/f0.wav
+        
+    - type: finish
+      name: Thank you
+      content: <p>Thank you for participating in the DyNaVoiceR II perceptual testing. Your contribution is deeply valued!</p> Please fill in the following questionnaire to complete the test and submit your results.
+      showResults: false
+      writeResults: true
+      questionnaire:
+        - type: text
+          label: E-mail <i>(optional)</i>
+          name: email
+          optional: true
+        - type: number
+          label: Age
+          name: age
+          min: 0
+          max: 100
+          default: 20
+        - type: likert
+          name: gender
+          label: Gender
+          response:
+            - value: female
+              label: Female
+            - value: male
+              label: Male
+            - value: other
+              label: I'd rather not say / Other
